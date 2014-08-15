@@ -1,4 +1,5 @@
 Tests
 =====
 
-Some newer tests for Jool
+Some informal & newer tests for Jool.
+
