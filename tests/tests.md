@@ -107,12 +107,12 @@ Hay tres paquetes en esta prueba.
 
 ### prueba 1
 
-IPv6 -> jool -> IPv4
+	IPv6 -> jool -> IPv4
 
 1. Enviar paquete pequeño sin FH
 2. Debera traducir a un paquete IPv4 con bandera DF true (1)
 
-	Utilizar un ping request. (ping6 [64:ff9b::ipv4.address])
+	Utilizar un ping request: `ping6 [64:ff9b::ipv4.address]`
 
 ### prueba 2
 
@@ -125,7 +125,7 @@ IPv6 -> jool -> IPv4
 	
 ### prueba 3* (inconclusa en more_revision)
 
-IPv6 -> jool -> IPv4
+	IPv6 -> jool -> IPv4
 
 | Host6 |--- MTU1 ---( X )--- MTU2 ---( Jool )--- mtu3 ---( X )--- MTU4 ---| Host4 |
 
@@ -139,14 +139,13 @@ MTU 4 = 1000
 3. Jool debe enviar un solo paquete 
 
 	con nping:
-		sudo ip link set vboxnet2 mtu 1280 
-		sudo nping -6 --tcp 64:ff9b::192.0.2.7 -c 1 --data-length 1400 -e vboxnet2
+		`sudo ip link set vboxnet2 mtu 1280` 
+		`sudo nping -6 --tcp 64:ff9b::192.0.2.7 -c 1 --data-length 1400 -e vboxnet2`
 		
 ### prueba 4
 
-IPv6 -> jool -> IPv4
-
-| Host6 |--- MTU1 ---( X )--- MTU2 ---( Jool )--- mtu3 ---( X )--- MTU4 ---| Host4 |
+	IPv6 -> jool -> IPv4
+	| Host6 |--- MTU1 ---( X )--- MTU2 ---( Jool )--- mtu3 ---( X )--- MTU4 ---| Host4 |
 
 MTU 1 = 1000
 MTU 2 = 1500
@@ -158,7 +157,7 @@ Cuando el paquete IPv6 llege a jool, jool debera defragmentarlo, y cuando salga 
  
 ### prueba 5
 
-IPv6 <- jool <- IPv4
+	IPv6 <- jool <- IPv4
 
 Paquete IPv4 debe tener DF true (1)
 Paquete IPv6 no debera contener Fragment Header
@@ -166,13 +165,13 @@ Paquete IPv6 no debera contener Fragment Header
 1. Crear bib estatica correspondiente para poder comunicarnos hacia ipv6
 2. Enviar paquete hacia ipv6
 
-	jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80
-	sudo nping --icmp 192.0.2.1 --icmp-id 8081 -df -c 1 --data-length 500
-	sudo nping --tcp 192.0.2.1 -p 8081  -df -c 1 --data-length 400
+	`jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`
+	`sudo nping --icmp 192.0.2.1 --icmp-id 8081 -df -c 1 --data-length 500`
+	`sudo nping --tcp 192.0.2.1 -p 8081  -df -c 1 --data-length 400`
 
 ### prueba 6
 
-IPv6 <- jool <- IPv4
+	IPv6 <- jool <- IPv4
 
 Paquete IPv4 debe tener DF false (0)
 Paquete IPv6 debera contener Fragment Header
@@ -180,6 +179,6 @@ Paquete IPv6 debera contener Fragment Header
 1. Crear bib estatica correspondiente para poder comunicarnos hacia ipv6
 2. Enviar paquete hacia ipv6
 
-	jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80
-	sudo nping --icmp 192.0.2.1 --icmp-id 8081 -c 1 --data-length 500
-	sudo nping --tcp 192.0.2.1 -p 8081 -c 1 --data-length 400
+	`jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`
+	`sudo nping --icmp 192.0.2.1 --icmp-id 8081 -c 1 --data-length 500`
+	`sudo nping --tcp 192.0.2.1 -p 8081 -c 1 --data-length 400`
