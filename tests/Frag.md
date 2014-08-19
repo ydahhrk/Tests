@@ -1,4 +1,8 @@
 # Fragment Header to Flag DF
+	La mayoria de (si no es que todas) las pruebas utilizan las siguientes direcciones IPs
+	Host6 IPv6 = 1::16/96
+	Jool IPv6 = 1::1/96, IPv4 = 192.0.2.1/24, Prefijo = 64:ff9b::/96
+	Host4 IPv4 = 192.0.2.7/24
 
 ## prueba 1
 
