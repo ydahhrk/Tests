@@ -53,7 +53,7 @@ Cuando el paquete IPv6 llege a jool, jool debera defragmentarlo, y cuando salga 
 Paquete IPv4 debe tener **DF** true (1)
 Paquete IPv6 no debera contener **Fragment Header**
 
-H4 = Host IPv4
+H4 = Host IPv4 
 H6 = Host IPv6
 
 1. En Jool se crea bib estatica correspondiente para poder comunicarnos hacia ipv6.
@@ -62,9 +62,9 @@ H6 = Host IPv6
 3. Jool (NAT64) Recibe paquete IPv4 y lo convierte a IPv6, por medio de la BIB establece la comunicacion.
 4. H6 Recibe paquete IPv6 de Jool (NAT64), se revisa que el paquete traducido no tenga un **Fragment Header**
 
-`jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`
-`sudo nping --icmp 192.0.2.1 --icmp-id 8081 -df -c 1 --data-length 500`
-`sudo nping --tcp 192.0.2.1 -p 8081  -df -c 1 --data-length 400`
+`jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80` 
+`sudo nping --icmp 192.0.2.1 --icmp-id 8081 -df -c 1 --data-length 500` 
+`sudo nping --tcp 192.0.2.1 -p 8081  -df -c 1 --data-length 400` 
 
 
 ## prueba 6
