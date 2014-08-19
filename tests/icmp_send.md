@@ -16,38 +16,54 @@
 ### 4. Determine in tuple
 
 * Viene un paquete cuyo l4-proto no es TCP, UDP o ICMP -> Proto Unreachable
-`IPv4_L4SCTP.pkt`
+ ```
+ IPv4_L4SCTP.pkt
+ ```
 
 
 ### 4. Filtering & updating
 
 * No hay BIB para paquete UDP -> Dest Unreachable (el RFC no especifica código)
-`nping --udp 192.0.2.1 -c 1`
+ ```
+nping --udp 192.0.2.1 -c 1
+```
 
 * No hay BIB para paquete TCP -> Port unreachable después de 6 segundos
-`nping --tcp-connect 192.0.2.1 -c 1`
+ ```
+nping --tcp-connect 192.0.2.1 -c 1
+```
 
 * No hay BIB para ICMP info -> Host Unreachable
+ ```
 `ping 192.0.2.1 -c 1`
+```
 
 * Bloqueado por Address-Dependent Filtering (UDP, ICMP) -> Filtered
 Crear bib estatica, setear address-dependent filtering, usar nping
-`$JOOL -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`
-`$JOOL --dropAddr=true`
-`nping --udp 192.0.2.1 -p 8081 -c 1`
-`sudo nping --icmp 192.0.2.1 --icmp-id 8081 -c 1`
+ ```
+$JOOL -ba --bib4=192.0.2.1#8081 --bib6=1::16#80
+$JOOL --dropAddr=true
+nping --udp 192.0.2.1 -p 8081 -c 1
+sudo nping --icmp 192.0.2.1 --icmp-id 8081 -c 1
+```
 
 ### 4. RFC 6145
 
 * DF está activado y paquete no cabe -> Frag needed (con MTU)
-`sudo nping --udp 192.0.2.1 -p 8081 --df --data-length 1400 -c 1`
+ ```
+sudo nping --udp 192.0.2.1 -p 8081 --df --data-length 1400 -c 1
+```
 	
 * TTL es cero o uno -> TTL Exceeded
-`sudo nping --udp 192.0.2.1 -p 8081 --ttl 0 -c 1`
+ ```
+sudo nping --udp 192.0.2.1 -p 8081 --ttl 0 -c 1
+```
 
 * Paquete contiene una unexpired source route -> Source Route Failed
-`$JOOL -ba --bib4=192.0.2.1#90 --bib6=1::16#90`
-`IPv4_OPT_LooseRoute.pkt`
+ ```
+$JOOL -ba --bib4=192.0.2.1#90 --bib6=1::16#90
+IPv4_OPT_LooseRoute.pkt
+```
 
 # IPv6
 
@@ -65,28 +81,38 @@ Crear bib estatica, setear address-dependent filtering, usar nping
 
 * Viene un paquete cuyo l4-proto no es TCP, UDP o ICMP -> Port Unreachable
 [Correcto* (nosotros enviamos PROTO unreacheable pero el RFC indica PORT UNREACHABLE)]
-`IPv6_L4_SCTP.pkt`
+ ```
+IPv6_L4_SCTP.pkt
+```
 
 ### 6. Filtering & updating
 
 * No es posible allocatear Pool4 addr o BIB (UDP, TCP) -> Address Unreachable
-`jool -4f`
-`nping -6 --udp 64:ff9b::1 -c 1`
-`nping -6 --tcp-connect 64:ff9b::1 -c 1`
+ ```
+jool -4f
+nping -6 --udp 64:ff9b::1 -c 1
+nping -6 --tcp-connect 64:ff9b::1 -c 1
+```
 
 ### 6. RFC 6145
 
 * Hop Limit es cero o uno -> Hop Limit Exceeded
-`IPv6_ttl1.pkt`
-`IPv6_ttl0.pkt`
+ ```
+IPv6_ttl1.pkt
+IPv6_ttl0.pkt
+```
 
 * Paquete tiene routing header con "a non-zero Segments Left field" -> Erroneous header. PTR debe 
 indicar al primer byte del segments left.
-`IPv6_ExtHdr_Routing.pkt`
+ ```
+IPv6_ExtHdr_Routing.pkt`
+```
 
 * Paquete es demasiado grande -> Packet too Big (con MTU)
-`IPv6_UDP_MTU1500.pkt con ethN de jool (ipv4) mtu 1400`
-`IPv6_ICMP_MTU1300.pkt con ethN de jool (ipv4) mtu 1280`
+	```
+IPv6_UDP_MTU1500.pkt con ethN de jool (ipv4) mtu 1400
+IPv6_ICMP_MTU1300.pkt con ethN de jool (ipv4) mtu 1280
+```
 
 # Jo..
 
