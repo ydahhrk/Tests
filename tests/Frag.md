@@ -84,13 +84,31 @@ H6 = Host IPv6
 Paquete IPv4 debe tener **DF (Don't Fragment)** false (0)  
 Paquete IPv6 debera contener **FH (Fragment Header)**
 
-1. En *Jool (NAT64)* se crea bib estatica correspondiente para poder comunicarnos hacia ipv6.
+1. En *Jool (NAT64)* se crea bib estatica correspondiente para poder comunicarnos hacia IPv6 desde IPv4.
 2. *Host4* envia un paquete a *Host6* a traves de jool
  - Las caracteristicas del paquete que se envia a *Host6* es que la bandera de **DF (Don't Fragment)** debe ser false (0)
 3. *Jool (NAT64)* Recibe paquete IPv4 y lo convierte a IPv6, por medio de la BIB establece la comunicacion.
-4. *Host6* Recibe paquete IPv6 de *Jool (NAT64)*, se revisa que el paquete traducido contenga un **FH (Fragment Header)**
+4. *Host6* Recibe paquete IPv6 de *Jool (NAT64)*, se revisa que el paquete traducido contenga un **FH (Fragment Header)**.
 
 `jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`  
 `sudo nping --icmp 192.0.2.1 --icmp-id 8081 -c 1 --data-length 500`  
 `sudo nping --tcp 192.0.2.1 -p 8081 -c 1 --data-length 400`  
+
+## prueba 7
+
+	IPv6 <- jool <- IPv4
+	
+Paquete IPv4 debe tener **DF (Dont Fragment)** true (1) y ser fragmento (debe enviar los fragmentos para que sea un paquete *"completo"*)  
+Paquete IPv6 debera contener **FH (Fragment Header)**
+
+
+1. En *Jool (NAT64)* se crea bib estatica correspondiente para poder comunicarnos hacia IPv6 desde IPv4.  
+2. *Host4* envia fragmentos (paquete) a *Host6* a traves de *Jool (NAT64)*
+ - Las caracteristicas de los fragmentos que se envia a *Host6* es que la bandera **DF (Dont Fragment)** debe ser true (1).
+3. *Jool (NAT64)* Recibe fragmentos IPv4, enseguida los desfragmenta y lo convierte a IPv6, por medio de la BIB establece la comunicacion.
+4. *Host6* recibe paquete IPv6 de *Jool (NAT64)*, se revisa que el paquete (no fragmentos) traducido contenga un **FH (Fragment Header)**
+
+`jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`  
+Utilizar packet sender con: `imcpv4_frag1.pkt`, `imcpv4_frag2.pkt`, `imcpv4_frag3.pkt`
+
 
