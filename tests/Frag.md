@@ -112,3 +112,17 @@ Paquete IPv6 debera contener **FH (Fragment Header)**
 Utilizar packet sender con: `imcpv4_frag1.pkt`, `imcpv4_frag2.pkt`, `imcpv4_frag3.pkt`
 
 
+## prueba 8
+
+	IPv6 <- Jool <- IPv4
+	
+1. En *Jool (NAT64)* se crea bib estatica correspondiente para poder comunicarnos hacia ipv6.
+2. Configurar *Jool (NAT64)* desde la *Aplicacion de usuario* para setear el minMtu a 1280 (Minimo permitido).
+3. *Host4* envia un paquete a *Host6* a traves de jool
+ - Las caracteristicas del paquete que se envia a *Host6* es que la bandera de **DF (Don't Fragment)** debe ser false (0) y su payload sea mayor a 1280.
+3. *Jool (NAT64)* Recibe paquete IPv4 y lo convierte a Fragmentos de IPv6, por medio de la BIB establece la comunicacion.
+4. *Host6* Recibe fragmentos IPv6 de *Jool (NAT64)*, se revisa que los fragmentos tenga un **FH (Fragment Header)**
+
+`jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`  
+`jool --minMTU 1280`  
+`sudo nping --icmp 192.0.2.1 --icmp-id 8081 -c 1  --data-length 1300`
