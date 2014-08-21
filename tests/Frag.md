@@ -8,12 +8,27 @@
 
 	IPv6 -> jool -> IPv4
 
-1. Un *Host6* debe enviar paquete pequeño sin **FH (Fragment Header)** hacia un *Host 4* a través de *Jool (NAT64)*
-2. *Jool* debera traducir a un paquete IPv4 con bandera **DF (Dont Fragment)** true (1)
-3. El *Host4* recibira un paquete IPv4 con bandera **DF (Dont Fragment)** true (1).  
+1. Un *Host6* debe enviar paquete sin **FH (Fragment Header)** hacia un *Host 4* a través de *Jool (NAT64)*
 
-Utilizar un ping request: `ping6 [64:ff9b::ipv4.address]`
+A continuacion se muestran las posibles combinaciones  
+Primero setear la bandera setDF false.
 
+`jool --setDF 0`  
+Utilizar un ping6: 
+
+| Comando | pkt6->len | pkt4->len | DF flag |
+|---------|-----------|-----------|---------|
+|`ping6 [64:ff9b::192.0.2.7] -s 39 -c 1`| 87 | 67 | (1) true |
+|`ping6 [64:ff9b::192.0.2.7] -s 40 -c 1`| 88 | 68 | (1) true |
+|`ping6 [64:ff9b::192.0.2.7] -s 41 -c 1`| 89 | 69 | (0) false |
+|`ping6 [64:ff9b::192.0.2.7] -s 1000 -c 1`| 1048 | 1028 | (0) false |
+|`ping6 [64:ff9b::192.0.2.7] -s 1231 -c 1`| 1279 | 1259 | (0) false |
+|`ping6 [64:ff9b::192.0.2.7] -s 1232 -c 1`| 1280 | 1260 | (0) false |
+|`ping6 [64:ff9b::192.0.2.7] -s 1233 -c 1`| 1281 | 1261 | (1) true |
+|`ping6 [64:ff9b::192.0.2.7] -s 1333 -c 1`| 1381 | 1361 | (1) true |
+
+si `jool --setDF 1`  
+y se utiliza la misma tabla de arriba todos los DF flag deben ser true a excepcion de la siguiente prueba (Prueba 2).
 
 ## prueba 2
 
