@@ -23,13 +23,15 @@
 	Si FH
 		DF = false
 	Si no
-		/* El RFC dice esto en la página 17. */
-		// DF = true
-		/* Luego dice esto en la página 25... */
-		Si skb->len <= 1280
-			DF = false
+		si --setDF True
+			/* El RFC dice esto en la página 17. */
+			// DF = true
 		else
-			DF = true
+			/* Luego dice esto en la página 25... */
+			Si skb->len <= 88 || skb->len > 1280
+				DF = TRUE
+			else
+				DF = false
 
 No tengo idea de qué significa esto:
 "To avoid the problems described in [RFC4963], it is RECOMMENDED that the translator maintain 3-tuple state for generating the IPv4 identification value."
