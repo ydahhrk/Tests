@@ -1,17 +1,17 @@
 # 4 -> 6
 
 	Si DF
-		Si el paquete está fragmentado
+		Si el paquete está fragmentado (Frag.md#prueba-1)
 			incluir FH
 		else
-			no incluir FH
+			no incluir FH (Frag.md#prueba-2)
 	else
-		Fragmentar si skb->len > minMTU6.
+		Fragmentar si skb->len > minMTU6. (Frag.md#prueba-3)
 		Si se fragmentó
 			incluir FH (obvio)
-		else
+		else (Frag.md#prueba-4)
 			/* No me acuerdo de esta bandera. Creo que no la tenemos. */
-			Si config.includeFH
+			Si config.includeFH 
 				incluir FH
 			else
 				no incluir FH
@@ -20,13 +20,13 @@
 
 # 6 -> 4
 
-	Si FH
+	Si FH (Frag.md#prueba-5)
 		DF = false
 	Si no
-		si --setDF True
+		si --setDF True (Frag.md#prueba-6.1)
 			/* El RFC dice esto en la página 17. */
 			// DF = true
-		else
+		else (Frag.md#prueba-6)
 			/* Luego dice esto en la página 25... */
 			Si skb->len <= 88 || skb->len > 1280
 				DF = TRUE
