@@ -24,14 +24,17 @@
 		DF = false
 	Si no
 		si --setDF True (Frag.md#prueba-6.1)
-			/* El RFC dice esto en la página 17. */
-			// DF = true
+			DF = true
 		else (Frag.md#prueba-6)
-			/* Luego dice esto en la página 25... */
 			Si skb->len <= 88 || skb->len > 1280
 				DF = TRUE
 			else
 				DF = false
+
+El RFC parece contradecirse en dos puntos:
+
+- En la página 17 dice "the translator SHOULD set the IPv4 Don't Fragment bit", pero en la página 18 dice "the translator MAY provide a function as follows. If (...), it sets the DF flag to zero; otherwise, it sets the DF flag to one". Supongo que el SHOULD no descarta configuraciones alternativas, de modo que definir que --setDF sea True por defecto parece satisfacer ambos requerimientos.
+- En la página 18 dice "If the packet size is greater than 88 bytes and less than or equal to 1280 bytes". En la página 25 dice "If the packet is less than or equal to 1280 bytes". De momento nos vamos a pegar a la primera versión de la condición, simplemente porque parece más específica. Sin embargo, necesitamos investigarlo más a fondo.
 
 No tengo idea de qué significa esto:
 "To avoid the problems described in [RFC4963], it is RECOMMENDED that the translator maintain 3-tuple state for generating the IPv4 identification value."

@@ -21,7 +21,7 @@ Paquete IPv6 debera contener **FH (Fragment Header)**
 4. *Host6* recibe paquete IPv6 de *Jool (NAT64)*, se revisa que el paquete (no fragmentos) traducido contenga un **FH (Fragment Header)**
 
 `jool -ba --bib4=192.0.2.1#8081 --bib6=1::16#80`  
-Utilizar packet sender con: `imcpv4_frag1.pkt`, `imcpv4_frag2.pkt`, `imcpv4_frag3.pkt`
+Utilizar packet sender con: `icmpv4_frag1.pkt`, `icmpv4_frag2.pkt`, `icmpv4_frag3.pkt`
 
 ## prueba 2
 
