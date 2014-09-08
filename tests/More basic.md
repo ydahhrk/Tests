@@ -29,96 +29,14 @@
 2. Enviar checksum-icmp4-good.pkt.
 3. Verificar que Wireshark
 
-## Pkt sources
+TODO
 
-### checksum-icmp6-good.pkt
+## --plateaus, --boostMTU
 
-	-6
+1. Insertar BIB entry: `sudo jool -bau --bib6 1::5#12345 --bib4 192.0.2.2#12345`
+2. Sube artificialmente el tamaño del link de IPv6 en j: `sudo ip link set eth0 mtu 2000`
+3. Enviar plateaus-boostmtu-mtu1280. Debe traducirse en un Packet too Big con MTU 1300.
+3. Enviar plateaus-boostmtu-mtu0.pkt. Debe traducirse en un Packet too Big con MTU 1280.
+4. `sudo jool --boostMTU false`
+5. Enviar plateaus-boostmtu-mtu0.pkt. Debe traducirse en un Packet too Big con MTU 1512 (porque debe agarrar el plateau 1492).
 
-
-
-
-
-
-	1::5
-	64:ff9b::192.0.2.5
-	58
-	1
-	4
-	
-	/* Insertar checksum aqui si estas buildeando bad. */
-
-	-6
-
-
-
-
-
-
-	64:ff9b::192.0.2.5
-	1::5
-	17
-	1234
-	80
-
-
-	0
-
-
-
-
-
-
-	checksum-icmp6-good.pkt
-
-### checksum-icmp4-good.pkt
-
-	-4
-
-
-
-
-
-
-
-
-
-
-
-
-	192.0.2.5
-	192.0.2.2
-	1
-	3
-	2
-
-	/* Checksum aqui */
-
-	-4
-
-
-
-
-
-
-
-
-
-
-
-
-	192.0.2.2
-	192.0.2.5
-	17
-	80
-	1234
-
-
-	0
-
-
-
-
-
-
-	checksum-icmp4-good.pkt
