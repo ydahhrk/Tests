@@ -8,7 +8,7 @@
 
 ## prueba 1
 
-	IPv6 <- jool <- IPv4
+	IPv6 - jool - IPv4
 	
 Paquete IPv4 debe tener **DF (Dont Fragment)** true (1) y ser fragmento (debe enviar los fragmentos para que sea un paquete *"completo"*)  
 Paquete IPv6 debera contener **FH (Fragment Header)**
@@ -25,7 +25,7 @@ Utilizar packet sender con: `icmpv4_frag1.pkt`, `icmpv4_frag2.pkt`, `icmpv4_frag
 
 ## prueba 2
 
-    IPv6 <-- jool <-- IPv4
+    IPv6 - jool - IPv4
 
 Paquete IPv4 debe tener **DF (Don't Fragment)** true (1)
 Paquete IPv6 no debera contener **Fragment Header**
@@ -45,7 +45,7 @@ H6 = Host IPv6
 
 ## prueba 3
 
-	IPv6 <- Jool <- IPv4
+	IPv6 - Jool - IPv4
 	
 Paquete IPv4 debe tener **DF (Dont Fragment)** false (0) y ser mayor a --minMTU6.   
 Paquete IPv6 deben de ser fragmentos.
@@ -63,7 +63,7 @@ Paquete IPv6 deben de ser fragmentos.
 
 ## prueba 4
 
-	IPv6 <- jool <- IPv4
+	IPv6 - jool - IPv4
 
 Paquete IPv4 debe tener **DF (Don't Fragment)** false (0).  
 Paquete IPv6 debera contener **FH (Fragment Header)**
@@ -82,7 +82,7 @@ Paquete IPv6 debera contener **FH (Fragment Header)**
  
 ## prueba 5
 
-	IPv6 -> jool -> IPv4
+	IPv6 - jool - IPv4
 	
 Nota: el resultado esperado en esta prueba es indiferente si `jool --setDF`: es *true (1)* o *false (0)*.  
 
@@ -94,7 +94,7 @@ Utilizar *PacketSender* con **IPV6_MF.pkt** *(ip6 = 1::16,  ip4 = 192.0.2.7)*
 
 ## prueba 6
 
-	IPv6 -> jool -> IPv4
+	IPv6 - jool - IPv4
 
 1. Un *Host6* debe enviar paquete sin **FH (Fragment Header)** hacia un *Host 4* a través de *Jool (NAT64)*
 
@@ -122,7 +122,7 @@ y se utiliza la misma tabla de arriba todos los DF flag deben ser true a excepci
 	
 ## prueba 7* (inconclusa en more_revision)
 
-	IPv6 -> jool -> IPv4
+	IPv6 - jool - IPv4
 	| Host6 |--- MTU1 ---( X )--- MTU2 ---( Jool )--- MTU3 ---( X )--- MTU4 ---| Host4 |
 	
 MTU 1 = 1000  
@@ -141,7 +141,7 @@ con nping:
 
 ## prueba 8* (Esta prueba depende que la 7 sea exitosa para que pueda seguir con el paso numero 3)
 
-	IPv6 -> jool -> IPv4
+	IPv6 - jool - IPv4
 	| Host6 |--- MTU1 ---( X )--- MTU2 ---( Jool )--- MTU3 ---( X )--- MTU4 ---| Host4 |
 
 MTU 1 = 1000  
