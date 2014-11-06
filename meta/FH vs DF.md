@@ -15,8 +15,29 @@
 				incluir FH
 			else
 				no incluir FH
+		/* Pero y si ya venía fragmentado? */
+
+Resumen:
+
+	Si DF está activado, solamente incluir el FH si ya está fragmentado.
+	Si DF está desactivado, solamente incluir el FH si van a resultar fragmentos (excepto si el admin configura que siempre se incluya).
+
+(tienes que revisar que Daniel solamente use esa bandera si DF no está activado y paquete no se fragmentó.)
 
 "the rules in Section 4.1 use the presence of an IPv6 Fragment Header to indicate that the sender might not be using path MTU discovery (i.e., the packet should not have the DF flag set should it later be translated back to IPv4)."
+
+Insertar defrag4 aquí trae dos problemas:
+
+1. Apagando DF, "Jool" rompe el contrato de DF fragmentando en cada ocasión. Las comillas son porque en realidad no es culpa de Jool. Quizá deberías postear comentario en algún lado que pregunte cómo no afecta eso a state.
+	- Si viene un paquete no fragmentado, no afecta porque defrag4 hace nada.
+	- Si viene un paquete fragmentado sin DF, no afecta porque no había contrato.
+	- El problema es cuando viene paquete fragmentado con DF. Sucede que este caso no tiene mucho sentido y, como el resto del kernel lo ignora, probablemente deberíamos seguir el ejemplo.
+		- TODO prueba que realmente el resto del kernel lo ignore.
+			- Inserta a state.
+			- Envía dos fragmentos de un paquete. Con DF activado. No necesian ser grandes.
+			- ¿Tienen DF activado?
+2. Se pierde la indicación de que el sender puede no estar usando Path MTU discovery. No usar PMTUD es raro, de modo que podríamos considerar esto relativamente irrelevante.
+	- He estado rompiéndome la cabeza, y sigo sin entender la conexión entre que venga un fragment header y que el paquete debería tener DF apagado en el regreso. Cuando un nodo IPv6 recibe un paquete con fragment header, no necesariamente responde con un paquete con fragment header. Al menos el RFC de IPv6 dice nada al respecto.
 
 # 6 -> 4
 
