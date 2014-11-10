@@ -1,0 +1,36 @@
+
+	     1.0.0.0/24     2.0.0.0/24
+	
+	+---+ .5    .1 +---+ .1    .5 +---+
+	| a |----------| r |----------| b |
+	+---+ ::5  ::1 +---+ ::1  ::5 +---+
+	
+	       1::/96         2::/96
+
+udp4-frag1-dfoff.pkt
+udp4-frag2-dfoff.pkt
+udp4-frag3-dfoff.pkt
+	Fragments of a IPv4-UDP packet. DF is off.
+	1.0.0.5#12345 -> 2.0.0.5#54321
+
+udp4-frag1-dfon.pkt
+udp4-frag2-dfon.pkt
+udp4-frag3-dfon.pkt
+	Fragments of a IPv4-UDP packet. DF is on.
+	1.0.0.5#12345 -> 2.0.0.5#54321
+
+udp6full.pkt
+	Full IPv6-UDP packet.
+	1::5#12345 -> 2::5#54321
+
+udp6frag1.pkt
+udp6frag2.pkt
+udp6frag3.pkt
+	Fragments of a IPv6-UDP packet.
+	1::5#12345 -> 2::5#54321
+
+udp6fullfrag.pkt
+	Full IPv6-UDP packet with a redundant fragment header
+	(fragment offset zero, MF false).
+	1::5#12345 -> 2::5#54321
+
