@@ -47,7 +47,9 @@ defrag6 los pervierte en esto:
 
 Guarda los fragmentos en la lista `skb_shinfo(skb)->frag_list`. `frags` siempre está vacío.
 
-Cuando Linux arroja al paquete hacia la red, todo el hack es revertido (excepto el orden de los fragmentos) y Wireshark observa los tres fragmentos originales (en orden). Esto es a menos de que algún módulo linearice al paquete, en cuyo caso los fragmentos se fusionan irrevertiblemente (Wireshark solamente ve un paquete).
+Si el paquete no se lineariza, cuando Linux arroja al paquete hacia la red, todo el hack es revertido (excepto el orden de los fragmentos) y Wireshark observa los tres fragmentos originales (en orden).
+
+Si el paquete se lineariza, los fragmentos se fusionan irrevertiblemente (Wireshark solamente ve un paquete).
 
 ## IPv4 - kernels 3.12-
 

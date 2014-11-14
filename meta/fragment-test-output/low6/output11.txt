@@ -1,0 +1,28 @@
+defrag insertado. Enviado un paquete con fragment header, no fragmentado. 
+
+[  362.868594] 1::5 2::5 len:80 head:dc781000 data:dc78104e tail:dc78109e end:dc781140 nh:dc78104e th:dc781076 MF:0 FO:0 
+[  362.868594] -----------------
+[  362.868594] IPv6 header:
+[  362.868594] 		version: 6
+[  362.868594] 		traffic class: 0
+[  362.868594] 		flow label: 0
+[  362.868594] 		payload length: 40
+[  362.868594] 		next header: 44
+[  362.868594] 		hop limit: 63
+[  362.868594] 		source address: 1::5
+[  362.868594] 		destination address: 2::5
+[  362.868594] Fragment header:
+[  362.868594] 		next header: 17
+[  362.868594] 		reserved: 0
+[  362.868594] 		fragment offset: 0
+[  362.868594] 		more fragments: 0
+[  362.868594] 		identification: 1234567890
+[  362.868594] Bytes:
+[  362.868594] 96	0	0	0	0	40	44	63	0	1	
+[  362.868594] 0	0	0	0	0	0	0	0	0	0	
+[  362.868594] 0	0	0	5	0	2	0	0	0	0	
+[  362.868594] 0	0	0	0	0	0	0	0	0	5	
+[  362.868594] 17	0	0	0	73	150	2	210	48	57	
+[  362.868594] 212	49	0	32	118	166	0	1	2	3	
+[  362.868594] 4	5	6	7	8	9	10	11	12	13	
+[  362.868594] 14	15	16	17	18	19	20	21	22	23	

@@ -1,0 +1,72 @@
+defrag no insertado. fragmentos con DF apagado enviados en orden invertido.
+
+
+[ 5344.942482] 1.0.0.5 2.0.0.5 len:36 head:dcf4a200 data:dcf4a24e tail:dcf4a272 end:dcf4a340 nh:dcf4a24e th:dcf4a24e DF:0 MF:0 FO:48 
+[ 5344.942597] -----------------
+[ 5344.942615] IPv4 header:
+[ 5344.942628] 		version: 4
+[ 5344.942657] 		header length: 5
+[ 5344.942670] 		type of service: 0
+[ 5344.942684] 		total length: 36
+[ 5344.942712] 		identification: 1357
+[ 5344.942726] 		don't fragment: 0
+[ 5344.942739] 		more fragments: 0
+[ 5344.942766] 		fragment offset: 48
+[ 5344.942780] 		time to live: 63
+[ 5344.942794] 		protocol: 17
+[ 5344.942807] 		checksum: 736d
+[ 5344.942859] 		source address: 1.0.0.5
+[ 5344.942949] 		destination address: 2.0.0.5
+[ 5344.943014] Bytes:
+[ 5344.943028] 69	0	0	36	5	77	0	6	63	17	
+[ 5344.943099] 115	109	1	0	0	5	2	0	0	5	
+[ 5344.943199] 0	1	2	3	4	5	6	7	8	9	
+[ 5344.943269] 10	11	12	13	14	15	
+[ 5344.943318] 
+[ 5344.943329] -----------------
+[ 5344.943837] 1.0.0.5 2.0.0.5 len:44 head:dcf4a400 data:dcf4a44e tail:dcf4a47a end:dcf4a540 nh:dcf4a44e th:dcf4a44e DF:0 MF:1 FO:24 
+[ 5344.943922] -----------------
+[ 5344.943938] IPv4 header:
+[ 5344.943951] 		version: 4
+[ 5344.943979] 		header length: 5
+[ 5344.943992] 		type of service: 0
+[ 5344.944006] 		total length: 44
+[ 5344.944033] 		identification: 1357
+[ 5344.944047] 		don't fragment: 0
+[ 5344.944061] 		more fragments: 1
+[ 5344.944074] 		fragment offset: 24
+[ 5344.944102] 		time to live: 63
+[ 5344.944116] 		protocol: 17
+[ 5344.944128] 		checksum: 5368
+[ 5344.944174] 		source address: 1.0.0.5
+[ 5344.944266] 		destination address: 2.0.0.5
+[ 5344.945235] Bytes:
+[ 5344.945266] 69	0	0	44	5	77	32	3	63	17	
+[ 5344.945337] 83	104	1	0	0	5	2	0	0	5	
+[ 5344.945406] 0	1	2	3	4	5	6	7	8	9	
+[ 5344.945476] 10	11	12	13	14	15	16	17	18	19	
+[ 5344.945560] 20	21	22	23	
+[ 5344.945585] 
+[ 5344.945596] -----------------
+[ 5344.945830] 1.0.0.5 2.0.0.5 len:44 head:dcf4ac00 data:dcf4ac4e tail:dcf4ac7a end:dcf4ad40 nh:dcf4ac4e th:dcf4ac4e DF:0 MF:1 FO:0 
+[ 5344.945913] -----------------
+[ 5344.945928] IPv4 header:
+[ 5344.945941] 		version: 4
+[ 5344.945954] 		header length: 5
+[ 5344.945982] 		type of service: 0
+[ 5344.945996] 		total length: 44
+[ 5344.946006] 		identification: 1357
+[ 5344.946006] 		don't fragment: 0
+[ 5344.946006] 		more fragments: 1
+[ 5344.946006] 		fragment offset: 0
+[ 5344.946006] 		time to live: 63
+[ 5344.946006] 		protocol: 17
+[ 5344.946006] 		checksum: 536b
+[ 5344.946006] 		source address: 1.0.0.5
+[ 5344.946006] 		destination address: 2.0.0.5
+[ 5344.946006] Bytes:
+[ 5344.946006] 69	0	0	44	5	77	32	0	63	17	
+[ 5344.946006] 83	107	1	0	0	5	2	0	0	5	
+[ 5344.946006] 48	57	212	49	0	64	2	233	0	1	
+[ 5344.946006] 2	3	4	5	6	7	8	9	10	11	
+[ 5344.946006] 12	13	14	15	

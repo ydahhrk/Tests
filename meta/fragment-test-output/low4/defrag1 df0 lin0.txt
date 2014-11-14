@@ -1,0 +1,68 @@
+defrag insertado. fragmentos con DF apagado enviados en orden invertido.
+-- La máquina destino solamente recibió un paquete (armado) con DF apagado --
+
+[ 5530.035785] 1.0.0.5 2.0.0.5 len:84 head:dd1b1000 data:dd1b104e tail:dd1b107a end:dd1b1140 nh:dd1b104e th:dd1b104e DF:0 MF:0 FO:0 
+[ 5530.035866] -----------------
+[ 5530.035898] IPv4 header:
+[ 5530.035908] 		version: 4
+[ 5530.035918] 		header length: 5
+[ 5530.035927] 		type of service: 0
+[ 5530.035937] 		total length: 84
+[ 5530.035947] 		identification: 1357
+[ 5530.035957] 		don't fragment: 0
+[ 5530.035967] 		more fragments: 0
+[ 5530.035976] 		fragment offset: 0
+[ 5530.035986] 		time to live: 63
+[ 5530.035996] 		protocol: 17
+[ 5530.036006] 		checksum: 7343
+[ 5530.036034] 		source address: 1.0.0.5
+[ 5530.036097] 		destination address: 2.0.0.5
+[ 5530.036143] Bytes:
+[ 5530.036154] 69	0	0	84	5	77	0	0	63	17	
+[ 5530.036195] 115	67	1	0	0	5	2	0	0	5	
+[ 5530.036236] 48	57	212	49	0	64	2	233	0	1	
+[ 5530.036277] 2	3	4	5	6	7	8	9	10	11	
+[ 5530.036318] 12	13	14	15	
+[ 5530.036337] 
+[ 5530.036345] -----------------
+[ 5530.036404] (sub) 1.0.0.5 2.0.0.5 len:24 head:df146400 data:df146462 tail:df14647a end:df146540 nh:df14644e th:df14644e DF:0 MF:1 FO:24 
+[ 5530.036459] -----------------
+[ 5530.036469] IPv4 header:
+[ 5530.036479] 		version: 4
+[ 5530.036488] 		header length: 5
+[ 5530.036498] 		type of service: 0
+[ 5530.036508] 		total length: 44
+[ 5530.036517] 		identification: 1357
+[ 5530.036527] 		don't fragment: 0
+[ 5530.036549] 		more fragments: 1
+[ 5530.036560] 		fragment offset: 24
+[ 5530.036570] 		time to live: 64
+[ 5530.036579] 		protocol: 17
+[ 5530.036589] 		checksum: 5268
+[ 5530.036612] 		source address: 1.0.0.5
+[ 5530.036671] 		destination address: 2.0.0.5
+[ 5530.036716] Bytes:
+[ 5530.036726] 0	1	2	3	4	5	6	7	8	9	
+[ 5530.036767] 10	11	12	13	14	15	16	17	18	19	
+[ 5530.036809] 20	21	22	23	
+[ 5530.036827] 
+[ 5530.036835] -----------------
+[ 5530.036889] (sub) 1.0.0.5 2.0.0.5 len:16 head:df146e00 data:df146e62 tail:df146e72 end:df146f40 nh:df146e4e th:df146e4e DF:0 MF:0 FO:48 
+[ 5530.036944] -----------------
+[ 5530.036954] IPv4 header:
+[ 5530.036995] 		version: 4
+[ 5530.037005] 		header length: 5
+[ 5530.037014] 		type of service: 0
+[ 5530.037024] 		total length: 36
+[ 5530.037034] 		identification: 1357
+[ 5530.037044] 		don't fragment: 0
+[ 5530.037054] 		more fragments: 0
+[ 5530.037064] 		fragment offset: 48
+[ 5530.037074] 		time to live: 64
+[ 5530.037083] 		protocol: 17
+[ 5530.037093] 		checksum: 726d
+[ 5530.037116] 		source address: 1.0.0.5
+[ 5530.037175] 		destination address: 2.0.0.5
+[ 5530.037220] Bytes:
+[ 5530.037230] 0	1	2	3	4	5	6	7	8	9	
+[ 5530.037271] 10	11	12	13	14	15	

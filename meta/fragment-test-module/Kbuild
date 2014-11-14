@@ -1,0 +1,8 @@
+#CC=cgcc
+ccflags-y := -I$(src)/../include
+EXTRA_CFLAGS += -DDEBUG
+
+obj-m += log.o
+
+log-objs += logger.o
+log-objs += ipv6_hdr_iterator.o

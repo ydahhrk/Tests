@@ -1,0 +1,71 @@
+defrag no insertado. fragmentos con DF encendido enviados en orden invertido.
+
+[ 1447.369086] 1.0.0.5 2.0.0.5 len:36 head:ce87f640 data:ce87f68e tail:ce87f6b2 end:ce87f6c0 nh:ce87f68e th:ce87f6a2 DF:1 MF:0 FO:48 
+[ 1447.369417] -----------------
+[ 1447.369454] IPv4 header:
+[ 1447.369467] 		version: 4
+[ 1447.369478] 		header length: 5
+[ 1447.369490] 		type of service: 0
+[ 1447.369501] 		total length: 36
+[ 1447.369513] 		identification: 1357
+[ 1447.369524] 		don't fragment: 1
+[ 1447.369536] 		more fragments: 0
+[ 1447.369548] 		fragment offset: 48
+[ 1447.369559] 		time to live: 63
+[ 1447.369571] 		protocol: 17
+[ 1447.369582] 		checksum: 336d
+[ 1447.369626] 		source address: 1.0.0.5
+[ 1447.369706] 		destination address: 2.0.0.5
+[ 1447.369757] Bytes:
+[ 1447.369770] 69	0	0	36	5	77	64	6	63	17	
+[ 1447.369809] 51	109	1	0	0	5	2	0	0	5	
+[ 1447.369908] 0	1	2	3	4	5	6	7	8	9	
+[ 1447.369946] 10	11	12	13	14	15	
+[ 1447.369971] 
+[ 1447.369982] -----------------
+[ 1447.371713] 1.0.0.5 2.0.0.5 len:44 head:ce87f780 data:ce87f7ce tail:ce87f7fa end:ce87f800 nh:ce87f7ce th:ce87f7e2 DF:1 MF:1 FO:24 
+[ 1447.371783] -----------------
+[ 1447.371800] IPv4 header:
+[ 1447.371812] 		version: 4
+[ 1447.371840] 		header length: 5
+[ 1447.371852] 		type of service: 0
+[ 1447.371864] 		total length: 44
+[ 1447.371875] 		identification: 1357
+[ 1447.371887] 		don't fragment: 1
+[ 1447.371898] 		more fragments: 1
+[ 1447.371910] 		fragment offset: 24
+[ 1447.371922] 		time to live: 63
+[ 1447.371933] 		protocol: 17
+[ 1447.371945] 		checksum: 1368
+[ 1447.371984] 		source address: 1.0.0.5
+[ 1447.372061] 		destination address: 2.0.0.5
+[ 1447.372112] Bytes:
+[ 1447.372125] 69	0	0	44	5	77	96	3	63	17	
+[ 1447.372164] 19	104	1	0	0	5	2	0	0	5	
+[ 1447.372201] 0	1	2	3	4	5	6	7	8	9	
+[ 1447.372254] 10	11	12	13	14	15	16	17	18	19	
+[ 1447.372292] 20	21	22	23	
+[ 1447.372311] 
+[ 1447.372321] -----------------
+[ 1447.372513] 1.0.0.5 2.0.0.5 len:44 head:ce87f8c0 data:ce87f90e tail:ce87f93a end:ce87f940 nh:ce87f90e th:ce87f922 DF:1 MF:1 FO:0 
+[ 1447.372513] -----------------
+[ 1447.372513] IPv4 header:
+[ 1447.372513] 		version: 4
+[ 1447.372513] 		header length: 5
+[ 1447.372513] 		type of service: 0
+[ 1447.372513] 		total length: 44
+[ 1447.372513] 		identification: 1357
+[ 1447.372513] 		don't fragment: 1
+[ 1447.372513] 		more fragments: 1
+[ 1447.372513] 		fragment offset: 0
+[ 1447.372513] 		time to live: 63
+[ 1447.372513] 		protocol: 17
+[ 1447.372513] 		checksum: 136b
+[ 1447.372513] 		source address: 1.0.0.5
+[ 1447.372513] 		destination address: 2.0.0.5
+[ 1447.372513] Bytes:
+[ 1447.372513] 69	0	0	44	5	77	96	0	63	17	
+[ 1447.372513] 19	107	1	0	0	5	2	0	0	5	
+[ 1447.372513] 48	57	212	49	0	64	2	233	0	1	
+[ 1447.372513] 2	3	4	5	6	7	8	9	10	11	
+[ 1447.372513] 12	13	14	15	

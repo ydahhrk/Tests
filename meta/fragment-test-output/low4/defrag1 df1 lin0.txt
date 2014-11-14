@@ -1,0 +1,68 @@
+defrag insertado. fragmentos con DF encendido enviados en orden invertido.
+-- La máquina destino solamente recibió un paquete (armado) con DF apagado --
+
+[ 5600.657694] 1.0.0.5 2.0.0.5 len:84 head:dd1b1600 data:dd1b164e tail:dd1b167a end:dd1b1740 nh:dd1b164e th:dd1b164e DF:0 MF:0 FO:0 
+[ 5600.657772] -----------------
+[ 5600.657786] IPv4 header:
+[ 5600.657793] 		version: 4
+[ 5600.657801] 		header length: 5
+[ 5600.657808] 		type of service: 0
+[ 5600.657816] 		total length: 84
+[ 5600.657823] 		identification: 1357
+[ 5600.657831] 		don't fragment: 0
+[ 5600.657839] 		more fragments: 0
+[ 5600.657846] 		fragment offset: 0
+[ 5600.657854] 		time to live: 63
+[ 5600.657861] 		protocol: 17
+[ 5600.657869] 		checksum: 7343
+[ 5600.657891] 		source address: 1.0.0.5
+[ 5600.657936] 		destination address: 2.0.0.5
+[ 5600.657971] Bytes:
+[ 5600.657979] 69	0	0	84	5	77	0	0	63	17	
+[ 5600.658011] 115	67	1	0	0	5	2	0	0	5	
+[ 5600.658051] 48	57	212	49	0	64	2	233	0	1	
+[ 5600.658083] 2	3	4	5	6	7	8	9	10	11	
+[ 5600.658115] 12	13	14	15	
+[ 5600.658129] 
+[ 5600.658135] -----------------
+[ 5600.658177] (sub) 1.0.0.5 2.0.0.5 len:24 head:dd1b1e00 data:dd1b1e62 tail:dd1b1e7a end:dd1b1f40 nh:dd1b1e4e th:dd1b1e4e DF:1 MF:1 FO:24 
+[ 5600.658220] -----------------
+[ 5600.658228] IPv4 header:
+[ 5600.658235] 		version: 4
+[ 5600.658243] 		header length: 5
+[ 5600.658250] 		type of service: 0
+[ 5600.658258] 		total length: 44
+[ 5600.658266] 		identification: 1357
+[ 5600.658273] 		don't fragment: 1
+[ 5600.658281] 		more fragments: 1
+[ 5600.658288] 		fragment offset: 24
+[ 5600.658296] 		time to live: 64
+[ 5600.658304] 		protocol: 17
+[ 5600.658311] 		checksum: 1268
+[ 5600.658329] 		source address: 1.0.0.5
+[ 5600.658374] 		destination address: 2.0.0.5
+[ 5600.658408] Bytes:
+[ 5600.658416] 0	1	2	3	4	5	6	7	8	9	
+[ 5600.658448] 10	11	12	13	14	15	16	17	18	19	
+[ 5600.658480] 20	21	22	23	
+[ 5600.658494] 
+[ 5600.658500] -----------------
+[ 5600.658546] (sub) 1.0.0.5 2.0.0.5 len:16 head:dd1b1c00 data:dd1b1c62 tail:dd1b1c72 end:dd1b1d40 nh:dd1b1c4e th:dd1b1c4e DF:1 MF:0 FO:48 
+[ 5600.658588] -----------------
+[ 5600.658596] IPv4 header:
+[ 5600.658604] 		version: 4
+[ 5600.658611] 		header length: 5
+[ 5600.658618] 		type of service: 0
+[ 5600.658626] 		total length: 36
+[ 5600.658634] 		identification: 1357
+[ 5600.658641] 		don't fragment: 1
+[ 5600.658649] 		more fragments: 0
+[ 5600.658657] 		fragment offset: 48
+[ 5600.658664] 		time to live: 64
+[ 5600.658672] 		protocol: 17
+[ 5600.658679] 		checksum: 326d
+[ 5600.658697] 		source address: 1.0.0.5
+[ 5600.658745] 		destination address: 2.0.0.5
+[ 5600.658779] Bytes:
+[ 5600.658787] 0	1	2	3	4	5	6	7	8	9	
+[ 5600.658819] 10	11	12	13	14	15	

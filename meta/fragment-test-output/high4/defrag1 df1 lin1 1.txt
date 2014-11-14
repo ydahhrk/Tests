@@ -1,0 +1,28 @@
+defrag activado, DF encendido. El módulo lineariza antes de loggear.
+
+[  688.770326] 1.0.0.5 2.0.0.5 len:84 head:dcada200 data:dcada24e tail:dcada2a2 end:dcada340 nh:dcada24e th:dcada262 prev:  (null) next:  (null):1 MF:0 FO:0 
+[  688.770534] -----------------
+[  688.770549] IPv4 header:
+[  688.770556] 		version: 4
+[  688.770563] 		header length: 5
+[  688.770570] 		type of service: 0
+[  688.770576] 		total length: 84
+[  688.770583] 		identification: 1357
+[  688.770590] 		don't fragment: 1
+[  688.770597] 		more fragments: 0
+[  688.770603] 		fragment offset: 0
+[  688.770620] 		time to live: 63
+[  688.770627] 		protocol: 17
+[  688.770634] 		checksum: 3343
+[  688.770659] 		source address: 1.0.0.5
+[  688.770701] 		destination address: 2.0.0.5
+[  688.770734] Bytes:
+[  688.770741] 69	0	0	84	5	77	64	0	63	17	
+[  688.770763] 51	67	1	0	0	5	2	0	0	5	
+[  688.770785] 48	57	212	49	0	64	2	233	0	1	
+[  688.770806] 2	3	4	5	6	7	8	9	10	11	
+[  688.770837] 12	13	14	15	0	1	2	3	4	5	
+[  688.770859] 6	7	8	9	10	11	12	13	14	15	
+[  688.770880] 16	17	18	19	20	21	22	23	0	1	
+[  688.770902] 2	3	4	5	6	7	8	9	10	11	
+[  688.770923] 12	13	14	15	

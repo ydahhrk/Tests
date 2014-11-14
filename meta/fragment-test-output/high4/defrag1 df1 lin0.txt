@@ -1,0 +1,24 @@
+defrag activado, DF encendido.
+
+[ 1369.338902] 1.0.0.5 2.0.0.5 len:84 head:ce87e240 data:ce87e28e tail:ce87e2ba end:ce87e2c0 nh:ce87e28e th:ce87e2a2 DF:1 MF:0 FO:0 
+[ 1369.339166] -----------------
+[ 1369.339184] IPv4 header:
+[ 1369.339194] 		version: 4
+[ 1369.339203] 		header length: 5
+[ 1369.339212] 		type of service: 0
+[ 1369.339221] 		total length: 84
+[ 1369.339230] 		identification: 1357
+[ 1369.339239] 		don't fragment: 1
+[ 1369.339265] 		more fragments: 0
+[ 1369.339275] 		fragment offset: 0
+[ 1369.339284] 		time to live: 63
+[ 1369.339293] 		protocol: 17
+[ 1369.339302] 		checksum: 3343
+[ 1369.339337] 		source address: 1.0.0.5
+[ 1369.339395] 		destination address: 2.0.0.5
+[ 1369.339436] Bytes:
+[ 1369.339446] 69	0	0	84	5	77	64	0	63	17	
+[ 1369.339477] 51	67	1	0	0	5	2	0	0	5	
+[ 1369.339506] 48	57	212	49	0	64	2	233	0	1	
+[ 1369.339535] 2	3	4	5	6	7	8	9	10	11	
+[ 1369.339565] 12	13	14	15	

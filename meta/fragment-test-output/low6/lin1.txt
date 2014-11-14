@@ -1,0 +1,85 @@
+defrag6 insertado. paquetes se linearizan antes de imprimirse.
+
+[ 1285.144690] 1::5 2::5 len:72 head:dd6bfa00 data:dd6bfa4e tail:dd6bfa96 end:dd6bfb40 nh:dd6bfa4e th:dd6bfa76 MF:1 FO:0 
+[ 1285.144722] frag_list:  (null) nr_frags:0
+[ 1285.144731] IPv6 header:
+[ 1285.144738] 		version: 6
+[ 1285.144745] 		traffic class: 0
+[ 1285.144753] 		flow label: 0
+[ 1285.144760] 		payload length: 32
+[ 1285.144768] 		next header: 44
+[ 1285.144775] 		hop limit: 63
+[ 1285.144783] 		source address: 1::5
+[ 1285.144791] 		destination address: 2::5
+[ 1285.144799] Fragment header:
+[ 1285.144806] 		next header: 17
+[ 1285.144813] 		reserved: 0
+[ 1285.144820] 		fragment offset: 0
+[ 1285.144828] 		more fragments: 1
+[ 1285.144835] 		identification: 1234567890
+[ 1285.144843] Bytes:
+[ 1285.144850] 96 0 0 0 0 32 44 63 0 1 
+[ 1285.144890] 0 0 0 0 0 0 0 0 0 0 
+[ 1285.144920] 0 0 0 5 0 2 0 0 0 0 
+[ 1285.144949] 0 0 0 0 0 0 0 0 0 5 
+[ 1285.144979] 17 0 0 1 73 150 2 210 48 57 
+[ 1285.145010] 212 49 0 64 5 230 0 1 2 3 
+[ 1285.145050] 4 5 6 7 8 9 10 11 12 13 
+[ 1285.145081] 14 15 
+[ 1285.145090] 
+[ 1285.145096] -----------------
+[ 1285.145113] -----------------
+[ 1285.145126] 1::5 2::5 len:72 head:dd7a2800 data:dd7a284e tail:dd7a2896 end:dd7a2940 nh:dd7a284e th:dd7a2876 MF:1 FO:24 
+[ 1285.145139] frag_list:  (null) nr_frags:0
+[ 1285.145147] IPv6 header:
+[ 1285.145154] 		version: 6
+[ 1285.145161] 		traffic class: 0
+[ 1285.145169] 		flow label: 0
+[ 1285.145176] 		payload length: 32
+[ 1285.145980] 		next header: 44
+[ 1285.146072] 		hop limit: 63
+[ 1285.146081] 		source address: 1::5
+[ 1285.146089] 		destination address: 2::5
+[ 1285.146096] Fragment header:
+[ 1285.146104] 		next header: 17
+[ 1285.146111] 		reserved: 0
+[ 1285.146118] 		fragment offset: 24
+[ 1285.146136] 		more fragments: 1
+[ 1285.146144] 		identification: 1234567890
+[ 1285.146151] Bytes:
+[ 1285.146158] 96 0 0 0 0 32 44 63 0 1 
+[ 1285.146189] 0 0 0 0 0 0 0 0 0 0 
+[ 1285.146218] 0 0 0 5 0 2 0 0 0 0 
+[ 1285.146248] 0 0 0 0 0 0 0 0 0 5 
+[ 1285.146278] 17 0 0 25 73 150 2 210 0 1 
+[ 1285.146326] 2 3 4 5 6 7 8 9 10 11 
+[ 1285.146357] 12 13 14 15 16 17 18 19 20 21 
+[ 1285.146389] 22 23 
+[ 1285.146397] 
+[ 1285.146403] -----------------
+[ 1285.146422] -----------------
+[ 1285.146436] 1::5 2::5 len:64 head:dd8e0a00 data:dd8e0a4e tail:dd8e0a8e end:dd8e0b40 nh:dd8e0a4e th:dd8e0a76 MF:0 FO:48 
+[ 1285.146471] frag_list:  (null) nr_frags:0
+[ 1285.146479] IPv6 header:
+[ 1285.146486] 		version: 6
+[ 1285.146493] 		traffic class: 0
+[ 1285.146501] 		flow label: 0
+[ 1285.146508] 		payload length: 24
+[ 1285.146516] 		next header: 44
+[ 1285.146523] 		hop limit: 63
+[ 1285.146531] 		source address: 1::5
+[ 1285.146539] 		destination address: 2::5
+[ 1285.146547] Fragment header:
+[ 1285.146555] 		next header: 17
+[ 1285.146562] 		reserved: 0
+[ 1285.146569] 		fragment offset: 48
+[ 1285.146576] 		more fragments: 0
+[ 1285.146584] 		identification: 1234567890
+[ 1285.146591] Bytes:
+[ 1285.146607] 96 0 0 0 0 24 44 63 0 1 
+[ 1285.146647] 0 0 0 0 0 0 0 0 0 0 
+[ 1285.146676] 0 0 0 5 0 2 0 0 0 0 
+[ 1285.146706] 0 0 0 0 0 0 0 0 0 5 
+[ 1285.146736] 17 0 0 48 73 150 2 210 0 1 
+[ 1285.146767] 2 3 4 5 6 7 8 9 10 11 
+[ 1285.146807] 12 13 14 15 

@@ -1,0 +1,71 @@
+defrag no insertado. fragmentos con DF apagado enviados en orden invertido.
+
+[ 1419.179149] 1.0.0.5 2.0.0.5 len:36 head:ce87e780 data:ce87e7ce tail:ce87e7f2 end:ce87e800 nh:ce87e7ce th:ce87e7e2 DF:0 MF:0 FO:48 
+[ 1419.179419] -----------------
+[ 1419.179433] IPv4 header:
+[ 1419.179451] 		version: 4
+[ 1419.179458] 		header length: 5
+[ 1419.179465] 		type of service: 0
+[ 1419.179471] 		total length: 36
+[ 1419.179478] 		identification: 1357
+[ 1419.179485] 		don't fragment: 0
+[ 1419.179491] 		more fragments: 0
+[ 1419.179498] 		fragment offset: 48
+[ 1419.179514] 		time to live: 63
+[ 1419.179521] 		protocol: 17
+[ 1419.179528] 		checksum: 736d
+[ 1419.179559] 		source address: 1.0.0.5
+[ 1419.179603] 		destination address: 2.0.0.5
+[ 1419.179636] Bytes:
+[ 1419.179646] 69	0	0	36	5	77	0	6	63	17	
+[ 1419.179671] 115	109	1	0	0	5	2	0	0	5	
+[ 1419.179693] 0	1	2	3	4	5	6	7	8	9	
+[ 1419.179714] 10	11	12	13	14	15	
+[ 1419.179728] 
+[ 1419.179734] -----------------
+[ 1419.182285] 1.0.0.5 2.0.0.5 len:44 head:ce87e8c0 data:ce87e90e tail:ce87e93a end:ce87e940 nh:ce87e90e th:ce87e922 DF:0 MF:1 FO:24 
+[ 1419.182285] -----------------
+[ 1419.182285] IPv4 header:
+[ 1419.182285] 		version: 4
+[ 1419.182285] 		header length: 5
+[ 1419.182285] 		type of service: 0
+[ 1419.182285] 		total length: 44
+[ 1419.182285] 		identification: 1357
+[ 1419.182285] 		don't fragment: 0
+[ 1419.182285] 		more fragments: 1
+[ 1419.182285] 		fragment offset: 24
+[ 1419.182285] 		time to live: 63
+[ 1419.182285] 		protocol: 17
+[ 1419.182285] 		checksum: 5368
+[ 1419.182285] 		source address: 1.0.0.5
+[ 1419.182285] 		destination address: 2.0.0.5
+[ 1419.182285] Bytes:
+[ 1419.182285] 69	0	0	44	5	77	32	3	63	17	
+[ 1419.182285] 83	104	1	0	0	5	2	0	0	5	
+[ 1419.182285] 0	1	2	3	4	5	6	7	8	9	
+[ 1419.182285] 10	11	12	13	14	15	16	17	18	19	
+[ 1419.182285] 20	21	22	23	
+[ 1419.182285] 
+[ 1419.182285] -----------------
+[ 1419.186873] 1.0.0.5 2.0.0.5 len:44 head:ce87ea00 data:ce87ea4e tail:ce87ea7a end:ce87ea80 nh:ce87ea4e th:ce87ea62 DF:0 MF:1 FO:0 
+[ 1419.187051] -----------------
+[ 1419.187068] IPv4 header:
+[ 1419.187073] 		version: 4
+[ 1419.187078] 		header length: 5
+[ 1419.187083] 		type of service: 0
+[ 1419.187088] 		total length: 44
+[ 1419.187093] 		identification: 1357
+[ 1419.187098] 		don't fragment: 0
+[ 1419.187103] 		more fragments: 1
+[ 1419.187108] 		fragment offset: 0
+[ 1419.187113] 		time to live: 63
+[ 1419.187118] 		protocol: 17
+[ 1419.187123] 		checksum: 536b
+[ 1419.187142] 		source address: 1.0.0.5
+[ 1419.187174] 		destination address: 2.0.0.5
+[ 1419.187198] Bytes:
+[ 1419.187204] 69	0	0	44	5	77	32	0	63	17	
+[ 1419.187221] 83	107	1	0	0	5	2	0	0	5	
+[ 1419.187237] 48	57	212	49	0	64	2	233	0	1	
+[ 1419.187255] 2	3	4	5	6	7	8	9	10	11	
+[ 1419.187271] 12	13	14	15	
